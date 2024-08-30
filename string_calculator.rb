@@ -7,7 +7,7 @@ class StringCalculator
     # Handle custom delimiters
     if numbers.start_with?("//")
       delimiter, numbers = numbers[2..].split("\n", 2)
-      numbers_list = numbers.split(delimiter).map(&:to_i)
+      numbers_list = numbers.split(/#{Regexp.escape(delimiter)}|,|\n/).map(&:to_i)
     else
       # Split by both commas and new lines
       numbers_list = numbers.split(/,|\n/).map(&:to_i)
