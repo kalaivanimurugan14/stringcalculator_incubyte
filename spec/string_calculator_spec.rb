@@ -34,6 +34,15 @@ RSpec.describe StringCalculator do
       end
     end
 
+    context 'when a custom delimiter is specified' do
+      it 'returns the sum of all numbers using the custom delimiter' do
+        expect(StringCalculator.add("//;\n1;2;5")).to eq(8)
+      end
+
+      it 'returns the sum of all numbers using a different custom delimiter' do
+        expect(StringCalculator.add("//|\n2|3|4|2")).to eq(11)
+      end
+    end
 
   end
 end
