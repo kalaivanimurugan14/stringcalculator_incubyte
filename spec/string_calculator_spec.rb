@@ -28,5 +28,12 @@ RSpec.describe StringCalculator do
       end
     end
 
+		context 'when the input has new line delimiters between numbers' do
+      it 'returns the sum of all numbers' do
+        expect(StringCalculator.add("1\n2,3,4")).to eq(10)
+      end
+    end
+
+
   end
 end
