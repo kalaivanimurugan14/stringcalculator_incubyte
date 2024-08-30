@@ -16,5 +16,11 @@ RSpec.describe StringCalculator do
       end
     end
 
+    context 'when the input is two numbers separated by a comma' do
+      it 'returns the sum of the numbers' do
+        expect(StringCalculator.add('2,5')).to eq(7)
+      end
+    end
+
   end
 end
